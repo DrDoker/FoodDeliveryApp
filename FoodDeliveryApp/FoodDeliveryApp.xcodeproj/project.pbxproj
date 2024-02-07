@@ -58,14 +58,62 @@
 		C5A06AE42B742F02006E4BB3 /* FoodDeliveryApp */ = {
 			isa = PBXGroup;
 			children = (
-				C5A06AE52B742F02006E4BB3 /* AppDelegate.swift */,
-				C5A06AE72B742F02006E4BB3 /* SceneDelegate.swift */,
-				C5A06AE92B742F02006E4BB3 /* ViewController.swift */,
-				C5A06AEE2B742F05006E4BB3 /* Assets.xcassets */,
-				C5A06AF02B742F05006E4BB3 /* LaunchScreen.storyboard */,
-				C5A06AF32B742F05006E4BB3 /* Info.plist */,
+				C5A06B022B743CE1006E4BB3 /* Sources */,
+				C5A06B052B743D59006E4BB3 /* Resources */,
 			);
 			path = FoodDeliveryApp;
+			sourceTree = "<group>";
+		};
+		C5A06B012B743CAC006E4BB3 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				C5A06AE52B742F02006E4BB3 /* AppDelegate.swift */,
+				C5A06AE72B742F02006E4BB3 /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		C5A06B022B743CE1006E4BB3 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				C5A06B012B743CAC006E4BB3 /* App */,
+				C5A06B032B743CF7006E4BB3 /* View */,
+				C5A06B042B743D2B006E4BB3 /* Storyboards */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		C5A06B032B743CF7006E4BB3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C5A06AE92B742F02006E4BB3 /* ViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C5A06B042B743D2B006E4BB3 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				C5A06AF02B742F05006E4BB3 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		C5A06B052B743D59006E4BB3 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C5A06AEE2B742F05006E4BB3 /* Assets.xcassets */,
+				C5A06B062B743D74006E4BB3 /* Configuration */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		C5A06B062B743D74006E4BB3 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				C5A06AF32B742F05006E4BB3 /* Info.plist */,
+			);
+			path = Configuration;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -293,7 +341,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = N2XAP4CLZT;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = FoodDeliveryApp/Info.plist;
+				INFOPLIST_FILE = FoodDeliveryApp/Resources/Configuration/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -320,7 +368,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = N2XAP4CLZT;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = FoodDeliveryApp/Info.plist;
+				INFOPLIST_FILE = FoodDeliveryApp/Resources/Configuration/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
