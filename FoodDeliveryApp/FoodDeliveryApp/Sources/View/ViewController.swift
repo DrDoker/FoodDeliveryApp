@@ -15,7 +15,7 @@ class ViewController: UIViewController {
         let lable = UILabel()
         lable.text = "Hello World!"
         lable.textColor = .white
-        lable.font = .systemFont(ofSize: 40, weight: UIFont.Weight(rawValue: 20))
+        lable.font = .Roboto.light.size(of: 40)
         return lable
     }()
     
