@@ -14,7 +14,7 @@ class ViewController: UIViewController {
     private lazy var titleLable: UILabel = {
         let lable = UILabel()
         lable.text = "Hello World!"
-        lable.textColor = .white
+        lable.textColor = AppColors.accentOrange
         lable.font = .Roboto.light.size(of: 40)
         return lable
     }()
@@ -23,7 +23,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .red
+        view.backgroundColor = AppColors.backgrond
         setupHierarchy()
         setupLayout()
     }
