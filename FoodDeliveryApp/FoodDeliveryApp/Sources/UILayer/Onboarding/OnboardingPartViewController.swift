@@ -15,7 +15,6 @@ class OnboardingPartViewController: UIViewController {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
         return imageView
-        
     }()
     
     private lazy var titleLable: UILabel = {
@@ -34,7 +33,7 @@ class OnboardingPartViewController: UIViewController {
         return lable
     }()
     
-    
+    // MARK: - Init
     init(image: UIImage, title: String, description: String) {
         super.init(nibName: nil, bundle: nil)
         onboardingImageView.image = image
@@ -68,7 +67,6 @@ class OnboardingPartViewController: UIViewController {
     }
     
     private func setupLayout() {
-        
         onboardingImageView.snp.makeConstraints { make in
             make.centerX.equalTo(view)
             make.centerY.equalTo(view).offset(-50)
@@ -87,6 +85,4 @@ class OnboardingPartViewController: UIViewController {
             make.right.equalTo(view).offset(-65)
         }
     }
-    
-    
 }

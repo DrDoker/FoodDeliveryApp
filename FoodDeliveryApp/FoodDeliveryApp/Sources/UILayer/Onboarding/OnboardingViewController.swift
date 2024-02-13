@@ -19,6 +19,7 @@ class OnboardingViewController: UIViewController {
     private let pageControl = UIPageControl()
     weak var viewOutput: OnboardingViewOutput?
     
+    // MARK: - Init
     init(pages: [UIViewController] = [UIViewController](), viewOutput: OnboardingViewOutput?) {
         self.pages = pages
         self.viewOutput = viewOutput
@@ -58,6 +59,7 @@ private extension OnboardingViewController {
     func setupPageControl() {
         pageControl.numberOfPages = pages.count
         pageControl.currentPage = 0
+        pageControl.isUserInteractionEnabled = false
         
         view.addSubview(pageControl)
         
@@ -92,8 +94,6 @@ extension OnboardingViewController: UIPageViewControllerDataSource {
         }
         return pages[nextIndex]
     }
-    
-    
 }
 
 // MARK: - UIPageViewControllerDelegate delegate
