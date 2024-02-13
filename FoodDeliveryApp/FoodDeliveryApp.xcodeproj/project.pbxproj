@@ -38,6 +38,8 @@
 		C5A06B442B7ADD26006E4BB3 /* ListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A06B432B7ADD26006E4BB3 /* ListCoordinator.swift */; };
 		C5A06B462B7ADD39006E4BB3 /* ProfileCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A06B452B7ADD39006E4BB3 /* ProfileCoordinator.swift */; };
 		C5A06B482B7ADE13006E4BB3 /* TabBarContoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A06B472B7ADE13006E4BB3 /* TabBarContoller.swift */; };
+		C5A06B4C2B7BCA0A006E4BB3 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A06B4B2B7BCA0A006E4BB3 /* OnboardingViewController.swift */; };
+		C5A06B4E2B7BCA66006E4BB3 /* OnboardingViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A06B4D2B7BCA66006E4BB3 /* OnboardingViewPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +74,8 @@
 		C5A06B432B7ADD26006E4BB3 /* ListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCoordinator.swift; sourceTree = "<group>"; };
 		C5A06B452B7ADD39006E4BB3 /* ProfileCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCoordinator.swift; sourceTree = "<group>"; };
 		C5A06B472B7ADE13006E4BB3 /* TabBarContoller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarContoller.swift; sourceTree = "<group>"; };
+		C5A06B4B2B7BCA0A006E4BB3 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		C5A06B4D2B7BCA66006E4BB3 /* OnboardingViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,8 +130,8 @@
 			children = (
 				C5A06B012B743CAC006E4BB3 /* App */,
 				C5A06B362B7ACED3006E4BB3 /* NavigationLayer */,
+				C5A06B492B7AF680006E4BB3 /* UILayer */,
 				C5A06B232B74405B006E4BB3 /* Extensions */,
-				C5A06B032B743CF7006E4BB3 /* View */,
 				C5A06B042B743D2B006E4BB3 /* Storyboards */,
 			);
 			path = Sources;
@@ -236,6 +240,24 @@
 			path = Coordinators;
 			sourceTree = "<group>";
 		};
+		C5A06B492B7AF680006E4BB3 /* UILayer */ = {
+			isa = PBXGroup;
+			children = (
+				C5A06B4A2B7BC9C8006E4BB3 /* Onboarding */,
+				C5A06B032B743CF7006E4BB3 /* View */,
+			);
+			path = UILayer;
+			sourceTree = "<group>";
+		};
+		C5A06B4A2B7BC9C8006E4BB3 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				C5A06B4B2B7BCA0A006E4BB3 /* OnboardingViewController.swift */,
+				C5A06B4D2B7BCA66006E4BB3 /* OnboardingViewPresenter.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -333,12 +355,14 @@
 				C5A06B292B744E47006E4BB3 /* AppColors.swift in Sources */,
 				C5A06B3E2B7AD748006E4BB3 /* OnboardingCoordinator.swift in Sources */,
 				C5A06B3C2B7AD614006E4BB3 /* AppCoordinator.swift in Sources */,
+				C5A06B4C2B7BCA0A006E4BB3 /* OnboardingViewController.swift in Sources */,
 				C5A06B422B7ADD13006E4BB3 /* OrderCoordinator.swift in Sources */,
 				C5A06AE82B742F02006E4BB3 /* SceneDelegate.swift in Sources */,
 				C5A06B462B7ADD39006E4BB3 /* ProfileCoordinator.swift in Sources */,
 				C5A06B442B7ADD26006E4BB3 /* ListCoordinator.swift in Sources */,
 				C5A06B402B7ADCD5006E4BB3 /* HomeCoordinator.swift in Sources */,
 				C5A06B272B7447B3006E4BB3 /* UIColor+Extension.swift in Sources */,
+				C5A06B4E2B7BCA66006E4BB3 /* OnboardingViewPresenter.swift in Sources */,
 				C5A06B3A2B7ACF51006E4BB3 /* Coordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
