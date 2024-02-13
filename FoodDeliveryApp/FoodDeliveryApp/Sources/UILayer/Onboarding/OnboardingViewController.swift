@@ -11,19 +11,34 @@ import SnapKit
 // MARK: - OnboardingViewController
 class OnboardingViewController: UIViewController {
     
-    // MARK: - Prppertis
+    // MARK: - Propertis
     private var pages = [UIViewController]()
-    
-    // MARK: - Views
-    private let pageViewController = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal)
-    private let pageControl = UIPageControl()
     weak var viewOutput: OnboardingViewOutput?
     
+    // MARK: - Outlets
+    private lazy var pageViewController: UIPageViewController = {
+        let pageViewController = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal)
+        pageViewController.delegate = self
+        pageViewController.dataSource = self
+        pageViewController.view.backgroundColor = AppColors.accentOrange
+        return pageViewController
+    }()
+    
+    private lazy var pageControl: UIPageControl = {
+        let pageControl = UIPageControl()
+        pageControl.numberOfPages = pages.count
+        pageControl.currentPage = 0
+        pageControl.isUserInteractionEnabled = false
+        return pageControl
+    }()
+    
     // MARK: - Init
-    init(pages: [UIViewController] = [UIViewController](), viewOutput: OnboardingViewOutput?) {
+    init(pages: [UIViewController] = [], viewOutput: OnboardingViewOutput?) {
         self.pages = pages
         self.viewOutput = viewOutput
         super.init(nibName: nil, bundle: nil)
+        
+        addChild(pageViewController)
     }
     
     required init?(coder: NSCoder) {
@@ -34,39 +49,25 @@ class OnboardingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupPageViewController()
-        setupPageControl()
-    }
-}
-
-// MARK: - Layout
-private extension OnboardingViewController {
-    func setupPageViewController() {
-        guard let firstPage = pages.first else {
-            return
-        }
-        
-        pageViewController.delegate = self
-        pageViewController.dataSource = self
-        pageViewController.view.backgroundColor = AppColors.accentOrange
-        pageViewController.setViewControllers([firstPage], direction: .forward, animated: true)
-        
-        addChild(pageViewController)
-        view.addSubview(pageViewController.view)
-        pageViewController.didMove(toParent: self )
-        
+        setupHierarchy()
+        setupLayout()
     }
     
-    func setupPageControl() {
-        pageControl.numberOfPages = pages.count
-        pageControl.currentPage = 0
-        pageControl.isUserInteractionEnabled = false
-        
+    // MARK: - Setup
+    func setupPageViewController() {
+        guard let firstPage = pages.first else { return }
+        pageViewController.setViewControllers([firstPage], direction: .forward, animated: true, completion: nil)
+    }
+    
+    private func setupHierarchy() {
+        view.addSubview(pageViewController.view)
         view.addSubview(pageControl)
-        
+    }
+    
+    private func setupLayout() {
         pageControl.snp.makeConstraints { make in
             make.centerX.equalTo(view)
             make.bottom.equalTo(view).offset(-30)
-            
         }
     }
 }
@@ -74,25 +75,13 @@ private extension OnboardingViewController {
 // MARK: - UIPageViewControllerDataSource delegate
 extension OnboardingViewController: UIPageViewControllerDataSource {
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
-        guard let index = pages.firstIndex(of: viewController) else {
-            return nil
-        }
-        let previousIndex = index - 1
-        guard previousIndex >= 0 else {
-            return nil
-        }
-        return pages[previousIndex]
+        guard let index = pages.firstIndex(of: viewController), index > 0 else { return nil }
+        return pages[index - 1]
     }
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
-        guard let index = pages.firstIndex(of: viewController) else {
-            return nil
-        }
-        let nextIndex = index + 1
-        guard nextIndex < pages.count else {
-            return nil
-        }
-        return pages[nextIndex]
+        guard let index = pages.firstIndex(of: viewController), index < pages.count - 1 else { return nil }
+        return pages[index + 1]
     }
 }
 
@@ -103,6 +92,5 @@ extension OnboardingViewController: UIPageViewControllerDelegate {
            let index = pages.firstIndex(of: viewController) {
             pageControl.currentPage = index
         }
-        
     }
 }
