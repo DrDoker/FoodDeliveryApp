@@ -8,10 +8,10 @@
 import UIKit
 
 enum AppColors {
-    static let onboardingAccent = UIColor(hex: "#D35400")
-    static let onboardingBackgrond = UIColor(hex: "#FFFFFF")
-    static let backgrond = UIColor(hex: "#E5E5E5")
-    static let tabBar = UIColor(hex: "#000000", alpha: 0.5)
+    static let onboardingAccent = UIColor(hex: "#FFFFFF")
+    static let onboardingBackgrond = UIColor(hex: "#D35400")
+    static let backgrond = UIColor(hex: "#FFFFFF")
     static let accentOrange = UIColor(hex: "#D35400")
     
 }
+

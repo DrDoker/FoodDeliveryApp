@@ -40,6 +40,7 @@
 		C5A06B482B7ADE13006E4BB3 /* TabBarContoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A06B472B7ADE13006E4BB3 /* TabBarContoller.swift */; };
 		C5A06B4C2B7BCA0A006E4BB3 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A06B4B2B7BCA0A006E4BB3 /* OnboardingViewController.swift */; };
 		C5A06B4E2B7BCA66006E4BB3 /* OnboardingViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A06B4D2B7BCA66006E4BB3 /* OnboardingViewPresenter.swift */; };
+		C5A06B502B7BED27006E4BB3 /* OnboardingPartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A06B4F2B7BED27006E4BB3 /* OnboardingPartViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +77,7 @@
 		C5A06B472B7ADE13006E4BB3 /* TabBarContoller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarContoller.swift; sourceTree = "<group>"; };
 		C5A06B4B2B7BCA0A006E4BB3 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		C5A06B4D2B7BCA66006E4BB3 /* OnboardingViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewPresenter.swift; sourceTree = "<group>"; };
+		C5A06B4F2B7BED27006E4BB3 /* OnboardingPartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPartViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -254,6 +256,7 @@
 			children = (
 				C5A06B4B2B7BCA0A006E4BB3 /* OnboardingViewController.swift */,
 				C5A06B4D2B7BCA66006E4BB3 /* OnboardingViewPresenter.swift */,
+				C5A06B4F2B7BED27006E4BB3 /* OnboardingPartViewController.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -361,6 +364,7 @@
 				C5A06B462B7ADD39006E4BB3 /* ProfileCoordinator.swift in Sources */,
 				C5A06B442B7ADD26006E4BB3 /* ListCoordinator.swift in Sources */,
 				C5A06B402B7ADCD5006E4BB3 /* HomeCoordinator.swift in Sources */,
+				C5A06B502B7BED27006E4BB3 /* OnboardingPartViewController.swift in Sources */,
 				C5A06B272B7447B3006E4BB3 /* UIColor+Extension.swift in Sources */,
 				C5A06B4E2B7BCA66006E4BB3 /* OnboardingViewPresenter.swift in Sources */,
 				C5A06B3A2B7ACF51006E4BB3 /* Coordinator.swift in Sources */,

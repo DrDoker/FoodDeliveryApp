@@ -46,7 +46,7 @@ private extension OnboardingViewController {
         
         pageViewController.delegate = self
         pageViewController.dataSource = self
-        
+        pageViewController.view.backgroundColor = AppColors.accentOrange
         pageViewController.setViewControllers([firstPage], direction: .forward, animated: true)
         
         addChild(pageViewController)
