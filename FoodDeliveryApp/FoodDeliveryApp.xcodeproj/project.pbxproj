@@ -41,6 +41,7 @@
 		C5A06B4C2B7BCA0A006E4BB3 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A06B4B2B7BCA0A006E4BB3 /* OnboardingViewController.swift */; };
 		C5A06B4E2B7BCA66006E4BB3 /* OnboardingViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A06B4D2B7BCA66006E4BB3 /* OnboardingViewPresenter.swift */; };
 		C5A06B502B7BED27006E4BB3 /* OnboardingPartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A06B4F2B7BED27006E4BB3 /* OnboardingPartViewController.swift */; };
+		C5A06B532B7C4951006E4BB3 /* UserStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A06B522B7C4951006E4BB3 /* UserStorage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,6 +79,7 @@
 		C5A06B4B2B7BCA0A006E4BB3 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		C5A06B4D2B7BCA66006E4BB3 /* OnboardingViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewPresenter.swift; sourceTree = "<group>"; };
 		C5A06B4F2B7BED27006E4BB3 /* OnboardingPartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPartViewController.swift; sourceTree = "<group>"; };
+		C5A06B522B7C4951006E4BB3 /* UserStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStorage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				C5A06B012B743CAC006E4BB3 /* App */,
+				C5A06B512B7C48FD006E4BB3 /* ServicesLayer */,
 				C5A06B362B7ACED3006E4BB3 /* NavigationLayer */,
 				C5A06B492B7AF680006E4BB3 /* UILayer */,
 				C5A06B232B74405B006E4BB3 /* Extensions */,
@@ -261,6 +264,14 @@
 			path = Onboarding;
 			sourceTree = "<group>";
 		};
+		C5A06B512B7C48FD006E4BB3 /* ServicesLayer */ = {
+			isa = PBXGroup;
+			children = (
+				C5A06B522B7C4951006E4BB3 /* UserStorage.swift */,
+			);
+			path = ServicesLayer;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -365,6 +376,7 @@
 				C5A06B442B7ADD26006E4BB3 /* ListCoordinator.swift in Sources */,
 				C5A06B402B7ADCD5006E4BB3 /* HomeCoordinator.swift in Sources */,
 				C5A06B502B7BED27006E4BB3 /* OnboardingPartViewController.swift in Sources */,
+				C5A06B532B7C4951006E4BB3 /* UserStorage.swift in Sources */,
 				C5A06B272B7447B3006E4BB3 /* UIColor+Extension.swift in Sources */,
 				C5A06B4E2B7BCA66006E4BB3 /* OnboardingViewPresenter.swift in Sources */,
 				C5A06B3A2B7ACF51006E4BB3 /* Coordinator.swift in Sources */,
