@@ -12,6 +12,7 @@ enum AppColors {
     static let onboardingBackgrond = UIColor(hex: "#D35400")
     static let backgrond = UIColor(hex: "#FFFFFF")
     static let accentOrange = UIColor(hex: "#D35400")
-    
+    static let black = UIColor(hex: "#000000")
+    static let grey = UIColor(hex: "#ECF0F1")
 }
 

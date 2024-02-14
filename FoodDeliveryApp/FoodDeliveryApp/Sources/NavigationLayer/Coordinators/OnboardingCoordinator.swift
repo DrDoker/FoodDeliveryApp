@@ -14,7 +14,7 @@ class OnboardingCoordinator: Coordinator  {
     }
     
     override func finish() { 
-        print("OnboardingCoordinator finish")
+        finishDeligate?.coordinatorDidFinish(childCoordinator: self)
     }
 }
 
@@ -30,14 +30,14 @@ private extension OnboardingCoordinator {
         let thirdVC = OnboardingPartViewController(image: UIImage(resource: .medal),
                                                    title: "Certificate Food",
                                                    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ultricies mauris a id.")
-        let foursVC = OnboardingPartViewController(image: UIImage(resource: .creditCard),
+        let fourthVC = OnboardingPartViewController(image: UIImage(resource: .creditCard),
                                                    title: "Payment Online",
                                                    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dui ultricies sit massa.")
         
         pages.append(firstVC)
         pages.append(secondVC)
         pages.append(thirdVC)
-        pages.append(foursVC)
+        pages.append(fourthVC)
         
         let presenter = OnboardingViewPresenter(coordinator: self)
         let viewController = OnboardingViewController(pages: pages, viewOutput: presenter)

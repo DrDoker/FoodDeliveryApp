@@ -13,7 +13,7 @@ class OnboardingViewController: UIViewController {
     
     // MARK: - Propertis
     private var pages = [UIViewController]()
-    weak var viewOutput: OnboardingViewOutput?
+    var viewOutput: OnboardingViewOutput?
     
     // MARK: - Outlets
     private lazy var pageViewController: UIPageViewController = {
@@ -30,6 +30,18 @@ class OnboardingViewController: UIViewController {
         pageControl.currentPage = 0
         pageControl.isUserInteractionEnabled = false
         return pageControl
+    }()
+    
+    private lazy var bottomButton: UIButton = {
+        let button = UIButton()
+        button.backgroundColor = AppColors.grey
+        button.setTitle("Next", for: .normal)
+        button.setTitleColor(AppColors.black, for: .normal)
+        button.titleLabel?.font = .Roboto.bold.size(of: 18)
+        button.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside)
+        button.layer.cornerRadius = 24
+        
+        return button
     }()
     
     // MARK: - Init
@@ -62,12 +74,42 @@ class OnboardingViewController: UIViewController {
     private func setupHierarchy() {
         view.addSubview(pageViewController.view)
         view.addSubview(pageControl)
+        view.addSubview(bottomButton)
     }
     
     private func setupLayout() {
         pageControl.snp.makeConstraints { make in
             make.centerX.equalTo(view)
             make.bottom.equalTo(view).offset(-30)
+        }
+        
+        bottomButton.snp.makeConstraints { make in
+            make.bottom.equalTo(pageControl).offset(-50)
+            make.left.equalTo(view).offset(30)
+            make.right.equalTo(view).offset(-30)
+            make.height.equalTo(50)
+        }
+    }
+    
+    // MARK: - Actions
+    @objc func buttonPressed() {
+        switch pageControl.currentPage {
+        case 0:
+            pageControl.currentPage = 1
+            pageViewController.setViewControllers([pages[1]], direction: .forward, animated: true)
+        case 1:
+            pageControl.currentPage = 2
+            pageViewController.setViewControllers([pages[2]], direction: .forward, animated: true)
+        case 2:
+            pageControl.currentPage = 3
+            pageViewController.setViewControllers([pages[3]], direction: .forward, animated: true)
+            bottomButton.setTitle("Cool!", for: .normal)
+        case 3:
+            print("Exit")
+            viewOutput?.onboardingFinish()
+        default:
+            break
+            
         }
     }
 }
@@ -91,6 +133,12 @@ extension OnboardingViewController: UIPageViewControllerDelegate {
         if let viewController = pendingViewControllers.first,
            let index = pages.firstIndex(of: viewController) {
             pageControl.currentPage = index
+            if index == pages.count - 1 {
+                bottomButton.setTitle("Cool!", for: .normal)
+            } else {
+                bottomButton.setTitle("Next", for: .normal)
+            }
+            
         }
     }
 }
