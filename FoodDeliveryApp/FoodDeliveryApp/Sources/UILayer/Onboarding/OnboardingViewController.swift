@@ -13,6 +13,7 @@ class OnboardingViewController: UIViewController {
     
     // MARK: - Propertis
     private var pages = [UIViewController]()
+    private var currentPageIndex = 0
     var viewOutput: OnboardingViewOutput?
     
     // MARK: - Outlets
@@ -132,13 +133,18 @@ extension OnboardingViewController: UIPageViewControllerDelegate {
     func pageViewController(_ pageViewController: UIPageViewController, willTransitionTo pendingViewControllers: [UIViewController]) {
         if let viewController = pendingViewControllers.first,
            let index = pages.firstIndex(of: viewController) {
-            pageControl.currentPage = index
-            if index == pages.count - 1 {
+            currentPageIndex = index
+        }
+    }
+    
+    func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
+        if completed {
+            pageControl.currentPage = currentPageIndex
+            if currentPageIndex == pages.count - 1 {
                 bottomButton.setTitle("Cool!", for: .normal)
             } else {
                 bottomButton.setTitle("Next", for: .normal)
             }
-            
         }
     }
 }
