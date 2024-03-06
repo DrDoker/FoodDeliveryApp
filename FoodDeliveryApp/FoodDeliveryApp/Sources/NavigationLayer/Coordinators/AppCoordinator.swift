@@ -8,9 +8,16 @@
 import UIKit
 
 class AppCoordinator: Coordinator {
+    
+    private let userStorage = UserStorage.shared
+    
     override func start() {
-//        showOnboardingFlow()
-        showMainFlow()
+//        userStorage.passedOnboarding = false
+        if userStorage.passedOnboarding {
+            showMainFlow()
+        } else {
+            showOnboardingFlow()
+        }
     }
     
     override func finish() {
@@ -31,25 +38,25 @@ private extension AppCoordinator {
         guard let navigationContoller = navigationContoller else { return }
         
         let homeNavigationContoller = UINavigationController()
-        homeNavigationContoller.tabBarItem = UITabBarItem(title: "Home", image: .init(systemName: "star"), tag: 0)
+        homeNavigationContoller.tabBarItem = UITabBarItem(title: "Home", image: .init(systemName: "star.fill"), tag: 0)
         let homeCoordinator = HomeCoordinator(type: .home, navigationContoller: homeNavigationContoller)
         homeCoordinator.finishDeligate = self
         homeCoordinator.start()
         
         let orderNavigationContoller = UINavigationController()
-        orderNavigationContoller.tabBarItem = UITabBarItem(title: "Order", image: .init(systemName: "star"), tag: 1)
+        orderNavigationContoller.tabBarItem = UITabBarItem(title: "Order", image: .init(systemName: "star.fill"), tag: 1)
         let orderCoordinator = OrderCoordinator(type: .order, navigationContoller: orderNavigationContoller)
         orderCoordinator.finishDeligate = self
         orderCoordinator.start()
         
         let listNavigationContoller = UINavigationController()
-        listNavigationContoller.tabBarItem = UITabBarItem(title: "List", image: .init(systemName: "star"), tag: 2)
+        listNavigationContoller.tabBarItem = UITabBarItem(title: "List", image: .init(systemName: "star.fill"), tag: 2)
         let listCoordinator = ListCoordinator(type: .list, navigationContoller: listNavigationContoller)
         listCoordinator.finishDeligate = self
         listCoordinator.start()
         
         let profileNavigationContoller = UINavigationController()
-        profileNavigationContoller.tabBarItem = UITabBarItem(title: "Profile ", image: .init(systemName: "star"), tag: 3)
+        profileNavigationContoller.tabBarItem = UITabBarItem(title: "Profile ", image: .init(systemName: "star.fill"), tag: 3)
         let profileCoordinator = ProfileCoordinator(type: .home, navigationContoller: profileNavigationContoller)
         profileCoordinator.finishDeligate = self
         profileCoordinator.start()
@@ -72,6 +79,9 @@ extension AppCoordinator: CoordinatorFinishDeligate {
         removeChildCordinator(childCoordinator)
         
         switch childCoordinator.type {
+        case .onboarding:
+            navigationContoller?.viewControllers.removeAll()
+            showMainFlow()
         case .app:
             return
         default:
