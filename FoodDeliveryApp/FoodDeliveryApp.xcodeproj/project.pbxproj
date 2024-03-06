@@ -42,6 +42,7 @@
 		C5A06B4E2B7BCA66006E4BB3 /* OnboardingViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A06B4D2B7BCA66006E4BB3 /* OnboardingViewPresenter.swift */; };
 		C5A06B502B7BED27006E4BB3 /* OnboardingPartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A06B4F2B7BED27006E4BB3 /* OnboardingPartViewController.swift */; };
 		C5A06B532B7C4951006E4BB3 /* UserStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A06B522B7C4951006E4BB3 /* UserStorage.swift */; };
+		C5BCDAF62B98EBDD00D9866C /* SceneFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5BCDAF52B98EBDC00D9866C /* SceneFactory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +81,7 @@
 		C5A06B4D2B7BCA66006E4BB3 /* OnboardingViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewPresenter.swift; sourceTree = "<group>"; };
 		C5A06B4F2B7BED27006E4BB3 /* OnboardingPartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPartViewController.swift; sourceTree = "<group>"; };
 		C5A06B522B7C4951006E4BB3 /* UserStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStorage.swift; sourceTree = "<group>"; };
+		C5BCDAF52B98EBDC00D9866C /* SceneFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneFactory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -248,6 +250,7 @@
 		C5A06B492B7AF680006E4BB3 /* UILayer */ = {
 			isa = PBXGroup;
 			children = (
+				C5BCDAF42B98EBA000D9866C /* SceneFactory */,
 				C5A06B4A2B7BC9C8006E4BB3 /* Onboarding */,
 				C5A06B032B743CF7006E4BB3 /* View */,
 			);
@@ -270,6 +273,14 @@
 				C5A06B522B7C4951006E4BB3 /* UserStorage.swift */,
 			);
 			path = ServicesLayer;
+			sourceTree = "<group>";
+		};
+		C5BCDAF42B98EBA000D9866C /* SceneFactory */ = {
+			isa = PBXGroup;
+			children = (
+				C5BCDAF52B98EBDC00D9866C /* SceneFactory.swift */,
+			);
+			path = SceneFactory;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -377,6 +388,7 @@
 				C5A06B402B7ADCD5006E4BB3 /* HomeCoordinator.swift in Sources */,
 				C5A06B502B7BED27006E4BB3 /* OnboardingPartViewController.swift in Sources */,
 				C5A06B532B7C4951006E4BB3 /* UserStorage.swift in Sources */,
+				C5BCDAF62B98EBDD00D9866C /* SceneFactory.swift in Sources */,
 				C5A06B272B7447B3006E4BB3 /* UIColor+Extension.swift in Sources */,
 				C5A06B4E2B7BCA66006E4BB3 /* OnboardingViewPresenter.swift in Sources */,
 				C5A06B3A2B7ACF51006E4BB3 /* Coordinator.swift in Sources */,
@@ -521,6 +533,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = N2XAP4CLZT;
@@ -537,6 +550,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.tsodev.FoodDeliveryApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -548,6 +562,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = N2XAP4CLZT;
@@ -564,6 +579,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.tsodev.FoodDeliveryApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
